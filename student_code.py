@@ -167,10 +167,10 @@ class KnowledgeBase(object):
             if fact.asserted:
                 fact.asserted = False
                 print("Fact is no longer asserted, but it still exists in KB since other rules or facts support it.")
-                return
             #If the fact is not asserted, do nothing
             else:
                 print("Fact was supported by other rules or facts but not asserted, so it was not retracted from KB.")
+            return
         #If the fact is not supported by some other facts or rules then it MUST BE ASSERTED, proceed.
         else:  
             #Store the facts supported by the fact being retracted in supported_facts
@@ -206,10 +206,10 @@ class KnowledgeBase(object):
             #If the rule is asserted, do nothing
             if rule.asserted:
                 print("Rule is asserted, so it cannot be retracted")
-                return
             #If the rule is not asserted, do nothing
             else:
                 print("Rule is supported by other facts and/or rules, so it cannot be retracted.")
+            return
         #If the rule is not supported by some other facts or rules then it MUST BE ASSERTED, proceed.
         else:  
             #Store the facts supported by the rule being retracted in supported_facts
